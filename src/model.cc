@@ -169,7 +169,7 @@ void Model::ConfigureV1()
 
     feature_info_.silence_weighting_config.silence_weight = 1e-3;
     feature_info_.silence_weighting_config.silence_phones_str = endpoint_config_.silence_phones;
-
+/*
     OnlineIvectorExtractionConfig ivector_extraction_opts;
     ivector_extraction_opts.splice_config_rxfilename = model_path_str_ + "/ivector/splice.conf";
     ivector_extraction_opts.cmvn_config_rxfilename = model_path_str_ + "/ivector/online_cmvn.conf";
@@ -179,7 +179,8 @@ void Model::ConfigureV1()
     ivector_extraction_opts.ivector_extractor_rxfilename = model_path_str_ + "/ivector/final.ie";
     feature_info_.use_ivectors = true;
     feature_info_.ivector_extractor_info.Init(ivector_extraction_opts);
-
+*/
+    feature_info_.use_ivectors = false;
     nnet3_rxfilename_ = model_path_str_ + "/final.mdl";
     hclg_fst_rxfilename_ = model_path_str_ + "/HCLG.fst";
     hcl_fst_rxfilename_ = model_path_str_ + "/HCLr.fst";
@@ -211,6 +212,7 @@ void Model::ConfigureV2()
     feature_info_.silence_weighting_config.silence_weight = 1e-3;
     feature_info_.silence_weighting_config.silence_phones_str = endpoint_config_.silence_phones;
 
+/*
     OnlineIvectorExtractionConfig ivector_extraction_opts;
     ivector_extraction_opts.splice_config_rxfilename = model_path_str_ + "/ivector/splice.conf";
     ivector_extraction_opts.cmvn_config_rxfilename = model_path_str_ + "/ivector/online_cmvn.conf";
@@ -220,7 +222,9 @@ void Model::ConfigureV2()
     ivector_extraction_opts.ivector_extractor_rxfilename = model_path_str_ + "/ivector/final.ie";
     feature_info_.use_ivectors = true;
     feature_info_.ivector_extractor_info.Init(ivector_extraction_opts);
+*/
 
+    feature_info_.use_ivectors = false;
     nnet3_rxfilename_ = model_path_str_ + "/am/final.mdl";
     hclg_fst_rxfilename_ = model_path_str_ + "/graph/HCLG.fst";
     hcl_fst_rxfilename_ = model_path_str_ + "/graph/HCLr.fst";
